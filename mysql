@@ -18,3 +18,25 @@ INSERT INTO employees (name, department, salary, hire_date) VALUES
 ('Alice Johnson', 'HR', 50000.00, '2022-05-10'),
 ('Bob Smith', 'IT', 65000.00, '2021-03-15'),
 ('Charlie Brown', 'Finance', 70000.00, '2020-11-01');
+
+
+-- 4. Query all employees
+SELECT * FROM employees;
+
+-- 5. Query employees with salary above 60,000
+SELECT name, department, salary
+FROM employees
+WHERE salary > 60000
+ORDER BY salary DESC;
+
+-- 6. Update salary for a specific employee
+UPDATE employees
+SET salary = salary + 5000
+WHERE name = 'Bob Smith';
+
+-- 7. Delete an employee record
+DELETE FROM employees
+WHERE id = 1;
+
+-- 8. Drop the table (optional cleanup)
+-- DROP TABLE employees;
