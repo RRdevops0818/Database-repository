@@ -1,0 +1,20 @@
+--1. Create a database (optional, skip if you already have one)
+CREATE DATABASE IF NOT EXISTS company_db;
+
+-- Switch to the database
+USE company_db;
+
+-- 2. Create a table for employees
+CREATE TABLE employees (
+    id INT PRIMARY KEY AUTO_INCREMENT,  -- Unique employee ID
+    name VARCHAR(100) NOT NULL,          -- Employee name
+    department VARCHAR(50),              -- Department name
+    salary DECIMAL(10, 2) CHECK (salary >= 0), -- Salary must be non-negative
+    hire_date DATE DEFAULT CURRENT_DATE  -- Default to today's date
+);
+
+-- 3. Insert sample data
+INSERT INTO employees (name, department, salary, hire_date) VALUES
+('Alice Johnson', 'HR', 50000.00, '2022-05-10'),
+('Bob Smith', 'IT', 65000.00, '2021-03-15'),
+('Charlie Brown', 'Finance', 70000.00, '2020-11-01');
